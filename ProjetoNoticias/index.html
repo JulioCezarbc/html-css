@@ -13,14 +13,14 @@
     <title>W. Notícias</title>
 </head>
 <body>
-    <header class="header-mobile">
-        <img src="https://raw.githubusercontent.com/marciomarcal98/noticias/602c4cca16647d6669382116dfc0cce9de6722ba/assets/images/logo.svg" alt="Logo do site de noticias W.">
+    <header>
+        <img src="/images/logo.svg" alt="Logo do site de noticias W.">
 
         <button>
-            <img src="https://raw.githubusercontent.com/marciomarcal98/noticias/602c4cca16647d6669382116dfc0cce9de6722ba/assets/images/icon-menu.svg" alt="Icone do menu">
+            <img src="/images/icon-menu.svg" alt="Icone do menu">
         </button>
 
-        <nav>
+        <nav class="mobile">
             <button>
                 <img src="/images/icon-menu-close.svg" alt="Icone de X para fechar o menu">
             </button>
@@ -31,11 +31,24 @@
             <a href="#">Categorias</a>
         </nav>
 
+        <nav class="desktop">
+            <a href="#">Home</a>
+            <a href="#">Novo</a>
+            <a href="#">Popular</a>
+            <a href="#">Trending</a>
+            <a href="#">Categorias</a>
+        </nav>
+
+
     </header>
+
 
     <main>
         <section class="primeira-secao">
-            <img src="https://github.com/marciomarcal98/noticias/blob/main/assets/images/image-web-3-mobile.jpg?raw=true" alt="Icone de puzzle colorido">
+            <picture>
+                <source media="(min-width: 700px)" srcset="/images/image-web-3-desktop.jpg">
+                <img src="/images/image-web-3-mobile.jpg" alt="Icone de puzzle colorido">
+            </picture>
 
             <h1>O futuro brilhante da Web 3.0</h1>
 
@@ -49,7 +62,7 @@
 
             <div class="margin-border-padding">
                 <h3>Hidrogênio VS Carros Elétricos</h3>
-                <p>Os carros movidos a hidrogênio alguma vez alcançarao os veículos elétricos? </p>
+                <p>Os carros movidos a hidrogênio alguma vez alcançarão os veículos elétricos? </p>
             </div>
 
             <div class="margin-border-padding">

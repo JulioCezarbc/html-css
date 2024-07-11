@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <main>
+        <form class="form">
+            <div class="div1">
+                <label for="">Email</label>
+                <input type="email" name="email" id="email" placeholder="E-mail" onchange="validateFields()">
+
+                <label for="">Senha</label>
+                <input type="password" name="password" placeholder="Senha" id="password" onchange="validateFields()">
+            </div>
+
+            <div class="div2">
+                <button type="button" id="entrada" disabled="true">Entrar</button>
+                <button type="button" id="recuperar" disabled="true">Recuperar Senha</button>
+                <button type="button" id="registrar">Registrar</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

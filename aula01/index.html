@@ -3,25 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global.css">
+
     <script src="script.js"></script>
+    <script src="validations.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+
+    <script>
+         const firebaseConfig = {
+            apiKey: "AIzaSyDmYL2AqF3aIzb4TvWj9diIskX4DL2D2VQ",
+            authDomain: "controle-de-gastos-4ada8.firebaseapp.com",
+            projectId: "controle-de-gastos-4ada8",
+            storageBucket: "controle-de-gastos-4ada8.appspot.com",
+            messagingSenderId: "968468000012",
+            appId: "1:968468000012:web:daf85a9f7d574b2ebf2d29"
+            };
+            firebase.initializeApp(firebaseConfig);
+    </script>
+
     <title>Login</title>
 </head>
 <body>
     <main>
         <form class="form">
             <div class="div1">
-                <label for="">Email</label>
-                <input type="email" name="email" id="email" placeholder="E-mail" onchange="validateFields()">
+                <label>Email</label>
+                <input type="email" name="email" id="email" placeholder="E-mail" onchange="onChangeEmail()">
+                <div class="error" id="email-required-error">Email é obrigatorio</div>
+                <div class="error" id="email-invalid-error">Email invalido</div>
 
-                <label for="">Senha</label>
-                <input type="password" name="password" placeholder="Senha" id="password" onchange="validateFields()">
+                <label>Senha</label>
+                <input type="password" name="password" placeholder="Senha" id="password" onchange="onChangePassword()">
+                <div class="error" id="password-required-error">Senha é obrigatoria</div>
+                
             </div>
 
             <div class="div2">
-                <button type="button" id="entrada" disabled="true">Entrar</button>
-                <button type="button" id="recuperar" disabled="true">Recuperar Senha</button>
-                <button type="button" id="registrar">Registrar</button>
+                <button type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
+                <button type="button" id="recover-password-button" disabled="true">Recuperar Senha</button>
+                <button type="button" id="registrar" onclick="register()">Registrar</button>
             </div>
         </form>
     </main>

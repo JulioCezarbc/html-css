@@ -1,16 +1,19 @@
-function showLoading(){
+function showLoading() {
     const div = document.createElement("div");
     div.classList.add("loading", "centralize");
-    const label = document.createElement("label");
-    label.innerText = "Carregando..."
+
+    const loaderCircle = document.createElement("div");
+    loaderCircle.classList.add("loader-circle");
+
+    div.appendChild(loaderCircle);
+
     document.body.appendChild(div);
-    div.appendChild(label);
 }
-function hideLoading(){
+
+function hideLoading() {
     const loadings = document.getElementsByClassName("loading");
 
-    if(loadings.length){
+    if (loadings.length) {
         loadings[0].remove();
     }
-
 }

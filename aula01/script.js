@@ -28,12 +28,31 @@ function login(){
         window.location.href = "pages/home/home.html";
     }).catch(error => {
         hideLoading();
-        alert('Usuario ou Senha estão incorretos. Tente novamente!')
+        alert(getErrorMessage(error));
     });
 }
 
 function register(){
     window.location.href = "pages/register/register.html";
+}
+function recoverPassword(){
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.email().value).then(() =>{
+        hideLoading();
+        alert('Email enviado com sucesso');
+    }).catch(error =>{
+        hideLoading();
+        alert(getErrorMessage(error));
+    });
+}
+function getErrorMessage(error){
+    if(error.code == "auth/user-not-found"){
+        return "Usuario nao encontrado";
+    }
+    if(error.code == "auth/invalid-credential"){
+        return "Credencial incorreta";
+    }
+    return error.message;
 }
 function toggleEmailErrors(){
     const email = form.email().value;
@@ -52,8 +71,6 @@ function toggleButtonDisable(){
     const passwordValid = isPasswordValid();
     form.loginButton().disabled = !emailValid || !passwordValid;
 }
-
-
 const form = {
     email: () => document.getElementById('email'),
     emailInvalidError: () => document.getElementById('email-invalid-error'),
@@ -63,3 +80,4 @@ const form = {
     passwordRequiredError: () => document.getElementById('password-required-error'),
     recoverPassword: () => document.getElementById('recover-password-button')
 }
+

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="register.css">
     <link rel="stylesheet" href="../../global.css">
+    <script src="register.js"></script>
+    <script src="../../validations.js"></script>
     <title>Registrar</title>
 </head>
 <body>
@@ -13,16 +15,32 @@
             <div class="div1">
                 <label>Email</label>
                 <input type="email" name="email" id="email" placeholder="E-mail" onchange="onChangeEmail()">
+                <div class="error" id="email-required-error">
+                    Email é obrigatorio
+                </div>
+                <div class="error" id="email-invalid-error">
+                    Email invalido
+                </div>
 
                 <label>Senha</label>
                 <input type="password" name="password" placeholder="Senha" id="password" onchange="onChangePassword()">
+                <div class="error" id="password-required-error">
+                    Senha é obrigatorio
+                </div>
+                <div class="error" id="password-min-length-error">
+                    A senha deve possuir no minimo 6 caracteres
+                </div>
+
 
                 <label>Confirmar senha</label>
-                <input type="password" name="" id="" placeholder="Confirmar senha">
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirmar senha" onchange="onChangeConfirmPassword()">
+                <div class="error" id="password-doesnt-match-error">
+                    Ambas as senhas devem ser iguais
+                </div>
             </div>
         
             <div class="div2">
-                <button type="button">Registrar</button>
+                <button type="button" disabled="true" id="register-button">Registrar</button>
                 <button type="button">Login</button>
             </div>
         </form>

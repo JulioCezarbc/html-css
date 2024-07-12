@@ -22,11 +22,14 @@ function isPasswordValid(){
     return true;
 }
 function login(){
-        firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value).then(response =>{
-            window.location.href = "pages/home/home.html";
-        }).catch(error => {
-            alert('Usuario ou Senha estão incorretos. Tente novamente!')
-        });
+    showLoading();
+    firebase.auth().signInWithEmailAndPassword(form.email().value, form.password().value).then(response =>{
+        hideLoading();
+        window.location.href = "pages/home/home.html";
+    }).catch(error => {
+        hideLoading();
+        alert('Usuario ou Senha estão incorretos. Tente novamente!')
+    });
 }
 
 function register(){

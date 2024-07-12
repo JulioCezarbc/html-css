@@ -35,7 +35,7 @@ label, button {
     margin-bottom: 10px;
   
 }
-.div2 {
+  .div2 {
     display: flex;
     flex-direction: column;
     width: 100%;

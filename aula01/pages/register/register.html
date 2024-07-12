@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../../global.css">
     <title>Registrar</title>
 </head>
 <body>
-    register
+    <main>
+        <form class="form">
+            <div class="div1">
+                <label>Email</label>
+                <input type="email" name="email" id="email" placeholder="E-mail" onchange="onChangeEmail()">
+
+                <label>Senha</label>
+                <input type="password" name="password" placeholder="Senha" id="password" onchange="onChangePassword()">
+
+                <label>Confirmar senha</label>
+                <input type="password" name="" id="" placeholder="Confirmar senha">
+            </div>
+        
+            <div class="div2">
+                <button type="button">Registrar</button>
+                <button type="button">Login</button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

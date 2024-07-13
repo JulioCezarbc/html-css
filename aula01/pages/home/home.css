@@ -1,0 +1,27 @@
+body{
+    background-color: #fde8ef;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    text-align: right;
+    background-color:#dfcdd3;
+    padding: 25px;
+}
+header button{
+    width: auto;
+}
+button {
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+.clear {
+    background: transparent;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}

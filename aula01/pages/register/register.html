@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="register.css">
-    <link rel="stylesheet" href="../../global.css">
-    <script src="register.js"></script>
-    <script src="../../validations.js"></script>
+    
+    
     <title>Registrar</title>
 </head>
-<body>
+<body class="centralize">
     <main>
         <form class="form">
             <div class="div1">
@@ -40,10 +38,23 @@
             </div>
         
             <div class="div2">
-                <button type="button" disabled="true" id="register-button">Registrar</button>
+                <button type="button" disabled="true" id="register-button" onclick="register()">Registrar</button>
                 <button type="button">Login</button>
             </div>
         </form>
     </main>
 </body>
+
+
+<link rel="stylesheet" href="../../global.css">
+<link rel="stylesheet" href="register.css">
+
+<script src="register.js"></script>
+<script src="../../validations.js"></script>
+<script src="../../loading.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+<script src="../../fireBase-init.js"></script>
+
 </html>

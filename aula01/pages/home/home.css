@@ -25,3 +25,37 @@ button {
     font-weight: bold;
     font-size: 18px;
 }
+ol{
+    list-style-type: none;
+    padding: 0;
+}
+ol li{
+    cursor: pointer;
+    background-color: #dfcdd3;
+    padding: 8px 16px;
+    border-bottom: 1px solid #000;
+    border: none;
+}
+ol li:hover{
+    opacity: 0.6;
+}
+ol li.expense{
+    border-left: 10px solid #ff0000;
+}
+ol li.income{
+    border-left:10px solid #2bff00;
+}
+p{
+    margin: 4px 0; 
+}
+.fab{
+    width: 54px;
+    height: 54px;
+    border-radius: 50px;
+    border: none;
+    font-size: 24px;
+    box-shadow: 3px 3px 3px #ffb0ca;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+}

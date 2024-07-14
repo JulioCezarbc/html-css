@@ -11,6 +11,10 @@ firebase.auth().onAuthStateChanged( user =>{
         findTransactions(user);
     }
 })
+function newTransaction(){
+    showLoading();
+    window.location.href = "../transaction/transaction.html";
+}
 function findTransactions(user){
     showLoading();
     firebase.firestore().collection('transactions').where('user.uid', '==', user.uid).orderBy('date','desc').get().then(snapshot =>{

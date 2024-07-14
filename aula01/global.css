@@ -4,13 +4,6 @@ body{
   margin: 0;
   height: 100vh;
 }
-main{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
 button {
   cursor: pointer;
   padding: 10px;
@@ -62,4 +55,36 @@ button:active {
   100% {
     transform: rotate(360deg);
   }
+}
+.div1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
+
+}
+.div2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+input,select {
+  padding: 10px;
+  width: 93%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+input:focus {
+  border-color: #007bff;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+label, button {
+  font-weight: bold;
 }

@@ -1,72 +1,110 @@
-body{
+body {
     background-color: #fde8ef;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
-header{
+
+header {
     text-align: right;
-    background-color:#dfcdd3;
+    background-color: #dfcdd3;
     padding: 25px;
 }
-header button{
+
+header button {
     width: auto;
+    
 }
+header button:hover {
+    opacity: 0.8;
+}
+
+main {
+    padding: 20px;
+}
+
 button {
     cursor: pointer;
     border: none;
-    width: 100%;
     text-align: center;
+    padding: 10px 20px;
+    border: none;
 }
+
 .clear {
     background: transparent;
     border: none;
     color: #000;
     font-weight: bold;
     font-size: 18px;
+    border: 1px solid #000;
+    border-radius: 5px;
 }
-ol{
+
+ol {
     list-style-type: none;
     padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
 }
-ol li{
+
+ol li {
     cursor: pointer;
-    background-color: #dfcdd3;
-    padding: 8px 16px;
+    background-color: #d3aeba;
+    padding: 15px;
     border-bottom: 1px solid #000;
-    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-ol li:hover{
-    opacity: 0.6;
+
+ol li:hover {
+    opacity: 0.8;
 }
-ol li.expense{
+
+ol li.expense {
     border-left: 10px solid #ff0000;
 }
-ol li.income{
-    border-left:10px solid #2bff00;
+
+ol li.income {
+    border-left: 10px solid #2bff00;
 }
-p{
-    margin: 4px 0; 
+
+p {
+    margin: 4px 0;
 }
-.fab{
+
+.fab {
     width: 54px;
     height: 54px;
-    border-radius: 50px;
+    border-radius: 50%;
     border: none;
     font-size: 24px;
     box-shadow: 3px 3px 3px #ffb0ca;
     position: fixed;
     bottom: 32px;
     right: 32px;
+    background-color: #dfcdd3;
+    color: #000;
+    cursor: pointer;
 }
-.loading{
+
+.fab:hover {
+    opacity: 0.8;
+}
+
+.loading {
     background: rgba(0, 0, 0, 0.5);
     position: fixed;
-    width: 100%; 
+    width: 100%;
     height: 100%;
     top: 0;
-    /* altura e largura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .loader-circle {
     width: 100px;
     height: 100px;
@@ -75,17 +113,19 @@ p{
     border-top-color: #c7aeb7;
     animation: loader-circle 1s linear infinite;
 }
-    
+
 @keyframes loader-circle {
-0% {
-    transform: rotate(0);
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-100% {
-    transform: rotate(360deg);
-}
-}
-.centralize{
+
+.centralize {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

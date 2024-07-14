@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transações</title>
+    <link rel="stylesheet" href="transaction.css">
+    <link rel="stylesheet" href="../../global.css">
+</head>
+<body>
+    <header>
+        <button type="button" class="clear" onclick="logout()">Sair</button>
+    </header>
+    <main class="centralize">
+        <form class="form">
+            <h2>Transação</h2>
+            <div class="form-group">
+                <label>Tipo</label>
+                <div class="form-radio">
+                    <label for="expense">Despesa</label>
+                    <input type="radio" name="type" checked id="expense">
+
+                    <label for="income">Receita</label>
+                    <input type="radio" name="type" id="income">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Data da Transação</label>
+                <input type="date" id="transaction-date">
+            </div>
+            <div class="form-group">
+                <label>Moeda</label>
+                <select id="currency">
+                    <option selected>Real</option>
+                    <option>Dólar</option>
+                    <option>Euro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Valor</label>
+                <input type="number" id="amount">
+            </div>
+            <div class="form-group">
+                <label>Tipo de Transação</label>
+                <select id="transaction-type">
+                    <option>-- Informe o tipo de transação --</option>
+                    <option>Acomodação</option>
+                    <option>Alimentação</option>
+                    <option>Salário</option>
+                    <option>Supermercado</option>
+                    <option>Transporte</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                <input type="text" id="description">
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="solid">Salvar</button>
+                <button type="button" class="clear">Cancelar</button>
+            </div>
+        </form>
+    </main>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
+    <script src="../../fireBase-init.js"></script>
+    <script src="../../auth-guard.js"></script>
+    <script src="../../loading.js"></script>
+    <script src="transaction.js"></script>
+</body>
+</html>

@@ -59,3 +59,33 @@ p{
     bottom: 32px;
     right: 32px;
 }
+.loading{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    /* altura e largura */
+}
+.loader-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid #555;
+    border-top-color: #c7aeb7;
+    animation: loader-circle 1s linear infinite;
+}
+    
+@keyframes loader-circle {
+0% {
+    transform: rotate(0);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.centralize{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

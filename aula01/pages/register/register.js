@@ -47,7 +47,10 @@ function register() {
         alert(getErrorMessage(error));
     })
 }
-
+function init(){
+    showLoading();
+    window.location.href = "../../pages/home/home.html";
+}
 function getErrorMessage(error){
 
     if(error.code == "auth/email-already-in-use"){

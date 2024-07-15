@@ -19,7 +19,10 @@ function findTransactions(user){
     showLoading();
     firebase.firestore().collection('transactions').where('user.uid', '==', user.uid).orderBy('date','desc').get().then(snapshot =>{
         hideLoading();
-        const transactions = snapshot.docs.map(doc => doc.data());
+        const transactions = snapshot.docs.map(doc => ({
+            ...doc.data(),
+            uid: doc.id
+    }));
         addTransactionsToScreen(transactions);
     }).catch(error =>{
         hideLoading();
@@ -30,25 +33,29 @@ function findTransactions(user){
 function addTransactionsToScreen(transactions){
     const orderedList = document.getElementById('transactions');
 
-    transactions.forEach(transactions => {
+    transactions.forEach(transaction => {
+        console.log(transaction);
         const li = document.createElement('li');
-        li.classList.add(transactions.type);
+        li.classList.add(transaction.type);
+        li.addEventListener('click', ()=>{
+            window.location.href = "../transaction/transaction.html?uid=" + transaction.uid;
+        })
 
         const date = document.createElement('p');
-        date.innerHTML = formatDate(transactions.date);
+        date.innerHTML = formatDate(transaction.date);
         li.appendChild(date);
 
         const money = document.createElement('p');
-        money.innerHTML = formatMoney(transactions.money);
+        money.innerHTML = formatMoney(transaction.money);
         li.appendChild(money);
 
         const type = document.createElement('p');
-        type.innerHTML = transactions.transactionType;
+        type.innerHTML = transaction.transactionType;
         li.appendChild(type);
 
-        if(transactions.description){
+        if(transaction.description){
             const description = document.createElement('p');
-            description.innerHTML = transactions.description;
+            description.innerHTML = transaction.description;
             li.appendChild(description);
         }
 

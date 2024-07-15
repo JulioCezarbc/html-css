@@ -38,6 +38,7 @@ function addTransactionsToScreen(transactions){
         const li = document.createElement('li');
         li.classList.add(transaction.type);
         li.addEventListener('click', ()=>{
+            showLoading();
             window.location.href = "../transaction/transaction.html?uid=" + transaction.uid;
         })
 

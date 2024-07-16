@@ -129,3 +129,15 @@ p {
     align-items: center;
     flex-direction: column;
 }
+.outline.danger{
+    color: #B22222;
+    border-color: #B22222;
+}
+ol li:hover button.danger{
+    display: block;
+}
+button.danger{
+    width: auto;
+    float: left;
+    display: none;
+}
